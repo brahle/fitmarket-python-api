@@ -24,18 +24,40 @@
 
 from __future__ import absolute_import
 
-# import models into sdk package
-from .models.status import Status
-from .models.stock import Stock
-from .models.stock_with_count import StockWithCount
+import os
+import sys
+import unittest
 
-# import apis into sdk package
-from .apis.status_api import StatusApi
-from .apis.trading_api import TradingApi
+import swagger_client
+from swagger_client.rest import ApiException
+from swagger_client.apis.trading_api import TradingApi
 
-# import ApiClient
-from .api_client import ApiClient
 
-from .configuration import Configuration
+class TestTradingApi(unittest.TestCase):
+    """ TradingApi unit test stubs """
 
-configuration = Configuration()
+    def setUp(self):
+        self.api = swagger_client.apis.trading_api.TradingApi()
+
+    def tearDown(self):
+        pass
+
+    def test_sell_all_post(self):
+        """
+        Test case for sell_all_post
+
+        Ovaj poziv ce prodati sve dionice koje korisnik ima. Primjetite da se ovaj poziv moze implementirati koristenjem vise poziva metode \"submit\".
+        """
+        pass
+
+    def test_submit_post(self):
+        """
+        Test case for submit_post
+
+        Poziv mijenja korisnikov portfolio. U tijelu poruke posaljite JSON sa opisom transakcije.
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

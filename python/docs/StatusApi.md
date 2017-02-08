@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **actual_state_get**
-> list[TrenutnaVrijednost] actual_state_get(token)
+> list[Stock] actual_state_get(token)
 
 Dohvaca JSON sa trenutnim cijenama svih dionica.
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[TrenutnaVrijednost]**](TrenutnaVrijednost.md)
+[**list[Stock]**](Stock.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mystate_get**
-> list[MojeStanje] mystate_get(token)
+> list[Status] mystate_get(token)
 
 Dohvaca JSON koji prikazuje korisnikovu ukupnu vrijednost, neinvestiranu vrijednost i vrijednosti investirane u dionice.
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[MojeStanje]**](MojeStanje.md)
+[**list[Status]**](Status.md)
 
 ### Authorization
 

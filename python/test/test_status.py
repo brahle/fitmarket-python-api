@@ -24,18 +24,30 @@
 
 from __future__ import absolute_import
 
-# import models into sdk package
-from .models.status import Status
-from .models.stock import Stock
-from .models.stock_with_count import StockWithCount
+import os
+import sys
+import unittest
 
-# import apis into sdk package
-from .apis.status_api import StatusApi
-from .apis.trading_api import TradingApi
+import swagger_client
+from swagger_client.rest import ApiException
+from swagger_client.models.status import Status
 
-# import ApiClient
-from .api_client import ApiClient
 
-from .configuration import Configuration
+class TestStatus(unittest.TestCase):
+    """ Status unit test stubs """
 
-configuration = Configuration()
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def testStatus(self):
+        """
+        Test Status
+        """
+        model = swagger_client.models.status.Status()
+
+
+if __name__ == '__main__':
+    unittest.main()
