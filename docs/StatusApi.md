@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mystate_get**
-> list[Status] mystate_get(token)
+> Status mystate_get(token)
 
 Dohvaca JSON koji prikazuje korisnikovu ukupnu vrijednost, neinvestiranu vrijednost i vrijednosti investirane u dionice.
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Status]**](Status.md)
+[**Status**](Status.md)
 
 ### Authorization
 
