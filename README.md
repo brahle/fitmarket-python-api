@@ -26,20 +26,6 @@ Then import the package:
 import fitmarket_api 
 ```
 
-### Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
-
-```sh
-python setup.py install --user
-```
-(or `sudo python setup.py install` to install the package for all users)
-
-Then import the package:
-```python
-import fitmarket_api
-```
-
 ## Getting Started
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
@@ -56,7 +42,7 @@ token = 'token_example' # str | Autorizacijski token
 
 try:
     # Dohvaca JSON sa trenutnim cijenama svih dionica.
-    api_response = api_instance.actual_state_get(token)
+    api_response = api_instance.actual_state_get(token=token)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StatusApi->actual_state_get: %s\n" % e)
