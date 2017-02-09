@@ -44,7 +44,7 @@ class Status(object):
         self.swagger_types = {
             'total_money': 'float',
             'free_money': 'float',
-            'shares': 'StockWithCount'
+            'shares': 'list[StockWithCount]'
         }
 
         self.attribute_map = {
@@ -115,7 +115,7 @@ class Status(object):
 
 
         :return: The shares of this Status.
-        :rtype: StockWithCount
+        :rtype: list[StockWithCount]
         """
         return self._shares
 
@@ -126,7 +126,7 @@ class Status(object):
 
 
         :param shares: The shares of this Status.
-        :type: StockWithCount
+        :type: list[StockWithCount]
         """
         if shares is None:
             raise ValueError("Invalid value for `shares`, must not be `None`")
