@@ -42,7 +42,7 @@ token = 'token_example' # str | Autorizacijski token
 
 try:
     # Dohvaca JSON sa trenutnim cijenama svih dionica.
-    api_response = api_instance.actual_state_get(token)
+    api_response = api_instance.actual_state_get(token=token)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StatusApi->actual_state_get: %s\n" % e)
