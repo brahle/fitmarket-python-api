@@ -1,4 +1,4 @@
-# swagger_client.TradingApi
+# fitmarket_api.TradingApi
 
 All URIs are relative to *https://fitmarket.xfer.hr/api*
 
@@ -17,12 +17,12 @@ Ovaj poziv ce prodati sve dionice koje korisnik ima. Primjetite da se ovaj poziv
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import fitmarket_api
+from fitmarket_api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TradingApi()
+api_instance = fitmarket_api.TradingApi()
 token = 'token_example' # str | Autorizacijski token
 
 try: 
@@ -64,12 +64,12 @@ Parametri su: - action je \"buy\" ili \"sell\" - stream_name ime dionice koja se
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import fitmarket_api
+from fitmarket_api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TradingApi()
+api_instance = fitmarket_api.TradingApi()
 token = 'token_example' # str | Autorizacijski token
 stream_name = 'stream_name_example' # str | ime dionice kojom se trguje (ili prefix ~ za inverznu dionicu).
 action = 'action_example' # str | akcija - buy ili sell.

@@ -1,4 +1,4 @@
-# swagger_client.StatusApi
+# fitmarket_api.StatusApi
 
 All URIs are relative to *https://fitmarket.xfer.hr/api*
 
@@ -18,12 +18,12 @@ Dohvaca JSON sa trenutnim cijenama svih dionica.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import fitmarket_api
+from fitmarket_api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.StatusApi()
+api_instance = fitmarket_api.StatusApi()
 token = 'token_example' # str | Autorizacijski token
 
 try: 
@@ -64,12 +64,12 @@ Dohvaca JSON koji prikazuje korisnikovu ukupnu vrijednost, neinvestiranu vrijedn
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import fitmarket_api
+from fitmarket_api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.StatusApi()
+api_instance = fitmarket_api.StatusApi()
 token = 'token_example' # str | Autorizacijski token
 
 try: 
@@ -110,12 +110,12 @@ Dohvaca CSV sa cijenama svih dionica u svim prijasnjim mjerenjima.
 ```python
 from __future__ import print_statement
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import fitmarket_api
+from fitmarket_api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.StatusApi()
+api_instance = fitmarket_api.StatusApi()
 token = 'token_example' # str | Autorizacijski token
 
 try: 

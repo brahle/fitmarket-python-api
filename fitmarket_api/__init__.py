@@ -24,30 +24,18 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
-import unittest
+# import models into sdk package
+from .models.status import Status
+from .models.stock import Stock
+from .models.stock_with_count import StockWithCount
 
-import fitmarket_api
-from fitmarket_api.rest import ApiException
-from fitmarket_api.models.stock import Stock
+# import apis into sdk package
+from .apis.status_api import StatusApi
+from .apis.trading_api import TradingApi
 
+# import ApiClient
+from .api_client import ApiClient
 
-class TestStock(unittest.TestCase):
-    """ Stock unit test stubs """
+from .configuration import Configuration
 
-    def setUp(self):
-        pass
-
-    def tearDown(self):
-        pass
-
-    def testStock(self):
-        """
-        Test Stock
-        """
-        model = fitmarket_api.models.stock.Stock()
-
-
-if __name__ == '__main__':
-    unittest.main()
+configuration = Configuration()
