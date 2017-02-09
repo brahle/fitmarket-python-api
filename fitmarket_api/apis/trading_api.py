@@ -3,7 +3,7 @@
 """
     Fitmarket
 
-    Mali broj ljudi - donori - dijele dnevna mjerenja svoje težine. Iz dnevne težine jednog donora određujemo vrijednosti dviju dionica:  - dionica X ima vrijednost koja odgovara težini donora na taj dan. - inverzna dionica ~X ima vrijednost (150 kg - X).  Primjetimo da:  - kako X raste, ~X pada. - X + ~X = 150 kg  Svaki igrač počinje igru sa 10,000 kg raspoloživog novca. Igrač koristi taj novac za trgovanje dionicama. Ukupna vrijednost igrača je zbroj rapoloživog novca i aktualne vrijednosti svih dionica koje posjeduje. Cilj igre je maksimizirati ukupnu vrijednost dobrim predviđanjem kretanja vrijednosti dionica. Na primjer, u prvom danu igrac kupi 125 dionica \"X\" za 80 kg. U drugom danu, dionica naraste na 82 kg. Ako igrac proda sve dionice \"X\", zaradio je 2 kg * 125 = 250 kg!  Igra ne dopušta donoru da trguje vlastitim dionicama. 
+    Mali broj ljudi - donori - dijele dnevna mjerenja svoje težine.  Iz dnevne težine jednog donora određujemo vrijednosti dviju dionica:  - dionica X ima vrijednost koja odgovara težini donora na taj dan. - inverzna dionica ~X ima vrijednost (150 kg - X).  Primjetimo da:  - kako X raste, ~X pada. - X + ~X = 150 kg  Svaki igrač počinje igru sa 10,000 kg raspoloživog novca. Igrač koristi taj novac za trgovanje dionicama. Ukupna vrijednost igrača je zbroj rapoloživog novca i aktualne vrijednosti svih dionica koje posjeduje. Cilj igre je maksimizirati ukupnu vrijednost dobrim predviđanjem kretanja vrijednosti dionica. Na primjer, u prvom danu igrac kupi 125 dionica \"X\" za 80 kg. U drugom danu, dionica naraste na 82 kg. Ako igrac proda sve dionice \"X\", zaradio je 2 kg * 125 = 250 kg!  Igra ne dopušta donoru da trguje vlastitim dionicama. 
 
     OpenAPI spec version: 1.1.0
     
@@ -51,7 +51,7 @@ class TradingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def sell_all_post(self, token, **kwargs):
+    def sell_all_post(self, **kwargs):
         """
         Ovaj poziv ce prodati sve dionice koje korisnik ima. Primjetite da se ovaj poziv moze implementirati koristenjem vise poziva metode \"submit\".
         
@@ -62,7 +62,7 @@ class TradingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.sell_all_post(token, callback=callback_function)
+        >>> thread = api.sell_all_post(token=token_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -73,12 +73,12 @@ class TradingApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.sell_all_post_with_http_info(token, **kwargs)
+            return self.sell_all_post_with_http_info(**kwargs)
         else:
-            (data) = self.sell_all_post_with_http_info(token, **kwargs)
+            (data) = self.sell_all_post_with_http_info(**kwargs)
             return data
 
-    def sell_all_post_with_http_info(self, token, **kwargs):
+    def sell_all_post_with_http_info(self, **kwargs):
         """
         Ovaj poziv ce prodati sve dionice koje korisnik ima. Primjetite da se ovaj poziv moze implementirati koristenjem vise poziva metode \"submit\".
         
@@ -89,7 +89,7 @@ class TradingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.sell_all_post_with_http_info(token, callback=callback_function)
+        >>> thread = api.sell_all_post_with_http_info(token=token_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -163,7 +163,7 @@ class TradingApi(object):
                                             _request_timeout=params.get('_request_timeout'),
                                             collection_formats=collection_formats)
 
-    def submit_post(self, token, stream_name, action, count, **kwargs):
+    def submit_post(self, **kwargs):
         """
         Poziv mijenja korisnikov portfolio. U tijelu poruke posaljite JSON sa opisom transakcije.
         Parametri su: - action je \"buy\" ili \"sell\" - stream_name ime dionice koja se kupuje (ili prefix ~ za inverznu dionicu). - count koliko dionice se zeli kupiti. 
@@ -174,7 +174,7 @@ class TradingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.submit_post(token, stream_name, action, count, callback=callback_function)
+        >>> thread = api.submit_post(token=token_value, stream_name=stream_name_value, action=action_value, count=count_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -188,12 +188,12 @@ class TradingApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.submit_post_with_http_info(token, stream_name, action, count, **kwargs)
+            return self.submit_post_with_http_info(**kwargs)
         else:
-            (data) = self.submit_post_with_http_info(token, stream_name, action, count, **kwargs)
+            (data) = self.submit_post_with_http_info(**kwargs)
             return data
 
-    def submit_post_with_http_info(self, token, stream_name, action, count, **kwargs):
+    def submit_post_with_http_info(self, **kwargs):
         """
         Poziv mijenja korisnikov portfolio. U tijelu poruke posaljite JSON sa opisom transakcije.
         Parametri su: - action je \"buy\" ili \"sell\" - stream_name ime dionice koja se kupuje (ili prefix ~ za inverznu dionicu). - count koliko dionice se zeli kupiti. 
@@ -204,7 +204,7 @@ class TradingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.submit_post_with_http_info(token, stream_name, action, count, callback=callback_function)
+        >>> thread = api.submit_post_with_http_info(token=token_value, stream_name=stream_name_value, action=action_value, count=count_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)

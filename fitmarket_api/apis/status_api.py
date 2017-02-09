@@ -3,7 +3,7 @@
 """
     Fitmarket
 
-    Mali broj ljudi - donori - dijele dnevna mjerenja svoje težine. Iz dnevne težine jednog donora određujemo vrijednosti dviju dionica:  - dionica X ima vrijednost koja odgovara težini donora na taj dan. - inverzna dionica ~X ima vrijednost (150 kg - X).  Primjetimo da:  - kako X raste, ~X pada. - X + ~X = 150 kg  Svaki igrač počinje igru sa 10,000 kg raspoloživog novca. Igrač koristi taj novac za trgovanje dionicama. Ukupna vrijednost igrača je zbroj rapoloživog novca i aktualne vrijednosti svih dionica koje posjeduje. Cilj igre je maksimizirati ukupnu vrijednost dobrim predviđanjem kretanja vrijednosti dionica. Na primjer, u prvom danu igrac kupi 125 dionica \"X\" za 80 kg. U drugom danu, dionica naraste na 82 kg. Ako igrac proda sve dionice \"X\", zaradio je 2 kg * 125 = 250 kg!  Igra ne dopušta donoru da trguje vlastitim dionicama. 
+    Mali broj ljudi - donori - dijele dnevna mjerenja svoje težine.  Iz dnevne težine jednog donora određujemo vrijednosti dviju dionica:  - dionica X ima vrijednost koja odgovara težini donora na taj dan. - inverzna dionica ~X ima vrijednost (150 kg - X).  Primjetimo da:  - kako X raste, ~X pada. - X + ~X = 150 kg  Svaki igrač počinje igru sa 10,000 kg raspoloživog novca. Igrač koristi taj novac za trgovanje dionicama. Ukupna vrijednost igrača je zbroj rapoloživog novca i aktualne vrijednosti svih dionica koje posjeduje. Cilj igre je maksimizirati ukupnu vrijednost dobrim predviđanjem kretanja vrijednosti dionica. Na primjer, u prvom danu igrac kupi 125 dionica \"X\" za 80 kg. U drugom danu, dionica naraste na 82 kg. Ako igrac proda sve dionice \"X\", zaradio je 2 kg * 125 = 250 kg!  Igra ne dopušta donoru da trguje vlastitim dionicama. 
 
     OpenAPI spec version: 1.1.0
     
@@ -51,7 +51,7 @@ class StatusApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def actual_state_get(self, token, **kwargs):
+    def actual_state_get(self, **kwargs):
         """
         Dohvaca JSON sa trenutnim cijenama svih dionica.
         
@@ -62,7 +62,7 @@ class StatusApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.actual_state_get(token, callback=callback_function)
+        >>> thread = api.actual_state_get(token=token_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -73,12 +73,12 @@ class StatusApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.actual_state_get_with_http_info(token, **kwargs)
+            return self.actual_state_get_with_http_info(**kwargs)
         else:
-            (data) = self.actual_state_get_with_http_info(token, **kwargs)
+            (data) = self.actual_state_get_with_http_info(**kwargs)
             return data
 
-    def actual_state_get_with_http_info(self, token, **kwargs):
+    def actual_state_get_with_http_info(self, **kwargs):
         """
         Dohvaca JSON sa trenutnim cijenama svih dionica.
         
@@ -89,7 +89,7 @@ class StatusApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.actual_state_get_with_http_info(token, callback=callback_function)
+        >>> thread = api.actual_state_get_with_http_info(token=token_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -163,7 +163,7 @@ class StatusApi(object):
                                             _request_timeout=params.get('_request_timeout'),
                                             collection_formats=collection_formats)
 
-    def mystate_get(self, token, **kwargs):
+    def mystate_get(self, **kwargs):
         """
         Dohvaca JSON koji prikazuje korisnikovu ukupnu vrijednost, neinvestiranu vrijednost i vrijednosti investirane u dionice.
         
@@ -174,7 +174,7 @@ class StatusApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.mystate_get(token, callback=callback_function)
+        >>> thread = api.mystate_get(token=token_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -185,12 +185,12 @@ class StatusApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.mystate_get_with_http_info(token, **kwargs)
+            return self.mystate_get_with_http_info(**kwargs)
         else:
-            (data) = self.mystate_get_with_http_info(token, **kwargs)
+            (data) = self.mystate_get_with_http_info(**kwargs)
             return data
 
-    def mystate_get_with_http_info(self, token, **kwargs):
+    def mystate_get_with_http_info(self, **kwargs):
         """
         Dohvaca JSON koji prikazuje korisnikovu ukupnu vrijednost, neinvestiranu vrijednost i vrijednosti investirane u dionice.
         
@@ -201,7 +201,7 @@ class StatusApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.mystate_get_with_http_info(token, callback=callback_function)
+        >>> thread = api.mystate_get_with_http_info(token=token_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -275,7 +275,7 @@ class StatusApi(object):
                                             _request_timeout=params.get('_request_timeout'),
                                             collection_formats=collection_formats)
 
-    def plot_txt_get(self, token, **kwargs):
+    def plot_txt_get(self, **kwargs):
         """
         Dohvaca CSV sa cijenama svih dionica u svim prijasnjim mjerenjima.
         
@@ -286,7 +286,7 @@ class StatusApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.plot_txt_get(token, callback=callback_function)
+        >>> thread = api.plot_txt_get(token=token_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -297,12 +297,12 @@ class StatusApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.plot_txt_get_with_http_info(token, **kwargs)
+            return self.plot_txt_get_with_http_info(**kwargs)
         else:
-            (data) = self.plot_txt_get_with_http_info(token, **kwargs)
+            (data) = self.plot_txt_get_with_http_info(**kwargs)
             return data
 
-    def plot_txt_get_with_http_info(self, token, **kwargs):
+    def plot_txt_get_with_http_info(self, **kwargs):
         """
         Dohvaca CSV sa cijenama svih dionica u svim prijasnjim mjerenjima.
         
@@ -313,7 +313,7 @@ class StatusApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.plot_txt_get_with_http_info(token, callback=callback_function)
+        >>> thread = api.plot_txt_get_with_http_info(token=token_value, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
